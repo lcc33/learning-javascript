@@ -180,7 +180,9 @@ const checkResult = (event) => {
   const form = document.getElementById(`root`);
 
   const studentFound = students.find(
-    (student) => student.studName === nameInput && student.num === formNoInput
+    (student) =>
+      student.studName.toLowerCase() === nameInput.toLowerCase() &&
+      parseInt(student.num) === parseInt(formNoInput)
   );
 
   if (studentFound) {
