@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      width: 100%;
+      height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #ffff;
+      background: linear-gradient(to right, black, grey);
+    }
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 22px;
+      padding: 2vw 4vw;
+      margin: 10px;
+      height: fit-content;
+      max-width: 600px;
+    }
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin: 10px;
+      font-size: 3rem;
+    }
+    input {
+      padding: 10px;
+      margin: 20px 10px;
+      outline: none;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    #btn {
+      width: 150px;
+      position: relative;
+      cursor: pointer;
+      padding: 12px 17px;
+      border: 0;
+      border-radius: 7px;
+      background: radial-gradient(
+        ellipse at bottom,
+        rgba(71, 81, 92, 1) 0%,
+        rgba(11, 21, 30, 1) 45%
+      );
+      color: rgba(255, 255, 255, 0.66);
+      transition: all 0.3s ease;
+      margin: 0 auto;
+      font-size: 1.5rem;
+    }
+  </style>
+  <body>
+    <div class="form-container">
+      <form id="root">
+        <h1>Sign In</h1>
+        <input type="text" placeholder="Username" id="userName" required />
+        <input type="password" placeholder="password" id="password" required />
+        <button id="btn">Sign In</button>
+      </form>
+    </div>
+    <script>
+      function login(event) {
+        event.preventDefault();
+        const name = document.getElementById(`userName`);
+        const password = document.getElementById(`password`);
+
+        name.value === `admin` && password.value === `admin`
+          ? (window.location.href = `score.html`)
+          : alert(`Wrong login details!`);
+      }
+      document.getElementById(`root`).addEventListener(`submit`, login);
+    </script>
+  </body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      width: 100%;
+      height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #ffff;
+      background: linear-gradient(to right, black, grey);
+    }
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 22px;
+      padding: 2vw 4vw;
+      margin: 10px;
+      height: fit-content;
+      max-width: 600px;
+    }
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin: 10px;
+      font-size: 3rem;
+    }
+    input {
+      padding: 10px;
+      margin: 20px 10px;
+      outline: none;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    #btn {
+      width: 150px;
+      position: relative;
+      cursor: pointer;
+      padding: 12px 17px;
+      border: 0;
+      border-radius: 7px;
+      background: radial-gradient(
+        ellipse at bottom,
+        rgba(71, 81, 92, 1) 0%,
+        rgba(11, 21, 30, 1) 45%
+      );
+      color: rgba(255, 255, 255, 0.66);
+      transition: all 0.3s ease;
+      margin: 0 auto;
+      font-size: 1.5rem;
+    }
+    /* Custom Alert Styles */
+    .custom-alert {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(1, 4, 43, 0.705);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      min-width: 300px;
+      text-align: center;
+      display: none; /* Hidden by default */
+      animation: fadeIn 0.3s;
+    }
+
+    .custom-alert h2 {
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .custom-alert p {
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .alert-btn {
+      background: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #333;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .alert-btn:hover {
+      background: #f0f0f0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+  </style>
+  <body>
+    <div class="form-container">
+      <form id="root">
+        <h1>Sign In</h1>
+        <input type="text" placeholder="Username" id="userName" required />
+        <input type="password" placeholder="password" id="password" required />
+        <button id="btn">Sign In</button>
+      </form>
+    </div>
+
+    
+    <div class="overlay" id="overlay"></div>
+    <div class="custom-alert" id="customAlert">
+      <h2>Login Error</h2>
+      <p>Wrong login details! Please try again.</p>
+      <button class="alert-btn" id="closeAlert">OK</button>
+    </div>
+
+    <script>
+      function showCustomAlert() {
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("customAlert").style.display = "block";
+      }
+
+      function closeCustomAlert() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("customAlert").style.display = "none";
+      }
+
+      function login(event) {
+        event.preventDefault();
+        const name = document.getElementById(`userName`);
+        const password = document.getElementById(`password`);
+
+        name.value === `admin` && password.value === `admin`
+          ? (window.location.href = `score.html`)
+          : showCustomAlert();
+      }
+
+      document.getElementById(`btn`).addEventListener(`click`, login);
+      document
+        .getElementById(`closeAlert`)
+        .addEventListener(`click`, closeCustomAlert);
+    </script>
+  </body>
+</html> -->
