@@ -34,7 +34,7 @@ const character = {
       this.power = "I'm the strongest";
       img.src = `assets/lvl5.jpeg`;
 
-      // 🧠 Hide "Level Up" button and show "Base Form" button
+
       lvlBtn.style.display = "none";
       resetBtn.style.display = "block";
     }
