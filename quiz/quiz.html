@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anime Quiz</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #1a1a2e;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 600px;
+        padding: 20px;
+        background: #16213e;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      h1,
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #0f3460;
+        color: white;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover:not(:disabled) {
+        background-color: #533483;
+      }
+
+      button.correct {
+        background-color: green !important;
+        color: white;
+      }
+
+      button.wrong {
+        background-color: red !important;
+        color: white;
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="welcome" id="welcome">
+        <h1>Welcome to the Anime Quiz!</h1>
+        <button onclick="startQuiz()">Start Quiz</button>
+      </div>
+
+      <div class="quiz" id="quiz" style="display: none">
+        <h2 class="question" id="question"></h2>
+        <div class="options" id="options"></div>
+      </div>
+
+      <div class="result" id="result" style="display: none">
+        <h2>Quiz Completed!</h2>
+        <p id="scoreText"></p>
+        <button onclick="restartQuiz()">Try Again</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
